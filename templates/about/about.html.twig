@@ -1,0 +1,95 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+
+<nav>
+<ul>
+    {% set currentDish = app.request.attributes.get("dish") %}
+    <li><a href="{{ path('about',{ dish : 'Deportiva'}) }}" class="tm-paging-link{{
+        currentDish=='Deportiva' ? ' active' : "" }}">Deportiva </a> </li>
+    <li><a href="{{ path('about',{ dish : 'Custom'}) }}" class="tm-paging-link{{
+        currentDish=='Custom' ? ' active' : "" }}">Custom </a> </li>
+    <li><a href="{{ path('about',{ dish : 'Naked'}) }}" class="tm-paging-link{{
+        currentDish=='Naked' ? ' active' : "" }}">Naked </a> </li>
+    
+    
+    
+    <div class="row tm-modelo">
+        <div id="tm-modelo-page" class"tm-modelo-page">
+        {% set lowerLimit = (currentPage - 1) * itemsPerPage %}
+        {% set upperLimit = currentPage * itemsPerPage + 1 %}
+        {% for dishes in data %}
+            {% if loop.index > lowerLimit and loop.index < upperLimit %}
+            <figure>
+            <figcaption>
+                <h3>{{ dishes.getname() }} </h3>
+                <p> {{ dishes.getdescripcion }} </p>
+                <p> {{ dishes.getprice }} <p>
+            </figcaption>
+            </figure>
+        {% endif %}
+        {% endfor %}
+
+        {% set lastPage = (((data|length)/itemsPerPage)|round(0,'ceil')) %}
+        {% set remainder = ((((data|length)/itemsPerPage)|round(0,'ceil'))*itemsPerPage-(data|length)) %}
+        {% if lastPage == currentPage and remainder != 0 %}
+
+        {% endif %}
+
+        <nav>
+        <ul>
+            {% for paginador in 1..lastPage %}
+            <li><a href="{{ path('about',{ dish : currentDish, currentPage : paginador}) }}"
+            class="tm-paging-link{{ currentPage == paginador ? ' active' : "" }}">{{ paginador }}</a></li>
+            {% endfor %}
+        </ul>
+        </nav>
+    
+        <div id="templatemo_main_wrapper">
+            <div id="templatemo_main">
+            
+                <div id="content">
+               	  <div class="content_box">
+                    <h2>Nuestros servicios</h2>
+                        <a href="#"><img class="image_wrapper image_fl" src="images/image_01.jpg" alt="image" /></a>
+                    <p><em>Nuestro negocio esta dirigido especialmente al mundo de las motos, llevamos en el mercado desde 1976 y poco a poco hemos crecido, desde reparar motos, vender-las de las marcas más conocidas, hasta a día de hoy tener el placer de poder distribuir nuetro propios modelos.</em></p>
+                      <p align="justify">Cuando empezamos con nuetro primer modelo estabamos muy hemocionados, salió defectuoso demasiadas veces... Pero nunca nos rendimos, y gracias a eso hemos podido lograr estas magestuosas obras de la ingeniería mecanica, con las que tenemos el placer de poder conducir cada día.</p>
+                        
+					</div>
+                    
+                    <div class="content_box">
+                        <h2>Servicios</h2>
+                        <p>-Venta de Motos <br>
+                           -Taller <br>
+                           -Venta de Accesorios </p>
+                        <div class="cleaner_h40"></div>
+			
+                        <div class="service_box">
+                            
+                            
+                            <div class="sb_right">
+                              
+                                   
+                              </ul>
+                            </div>
+                            <div class="cleaner"></div>
+                           
+                            <div class="cleaner"></div>
+                        </div>
+            
+                         <div class="service_box">
+                            
+                            
+                            <div class="sb_right">
+                              
+                                   
+                              </ul>
+                            </div>
+                            <div class="cleaner"></div>
+                            
+                            <div class="cleaner"></div>
+                        </div>
+					</div>
+                                        
+                    <div class="cleaner"></div>
+                </div> <!-- end of content -->
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+                	<div class="content_box last">
+                        <h2>Contact Information</h2>
+    
+                   	  <p align="justify">Mauris congue felis at nisi. Donec felis. Pellentesque leo lacus, rhoncus nec, consequat ac, ullamcorper nec, orci. Etiam dictum nisi. <a href="#">Donec enim</a> enim, imperdiet quis, mollis a, elementum a, diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et nunc commodo ante ornare imperdiet. Donec nunc neque, pulvinar a, vestibulum eget, luctus id, orci. Pellentesque <a href="#">elementum</a> enim a augue.</p>
+                        <p align="justify">Donec in nisi. Etiam sit amet turpis. Duis nulla diam, posuere ac, varius id, ullamcorper sit amet, libero. Nam sodales, pede vel dapibus lobortis, ipsum diam molestie risus, a vulputate risus nisl pulvinar lacus. Suspendisse sed odio ut mi auctor blandit. <a href="#">Duis luctus</a> nulla metus, a vulputate mauris. Integer sed nisi sapien, ut gravida mauris.</p>
+                      <p align="justify">&nbsp;</p>
+                        
+                    <h3>Our Location</h3>
+                        208-308 Quisque odio quam, <br />
+                        Pulvinar sit amet convallis eget, 10110<br />
+                        Venenatis ut turpis<br />
+       	        <br />
+                        Tel: 010-020-1234<br />
+                        Fax: 010-020-5678
+                        
+                        <div class="cleaner_h40"></div>
+                        
+                        <div id="contact_form">
+                
+                            <h3>Contact Form</h3>
+                            
+                            <form method="post" name="contact" action="#">
+        
+                          <label for="author">Name:</label> <input name="author" type="text" class="required input_field" id="author" maxlength="50" />
+                                <label for="email">Email:</label> 
+                                <input name="email" type="text" class="validate-email required input_field" id="email" maxlength="50" />
+                                
+                                <label for="phone">Phone:</label> 
+                                <input name="phone" type="text" class="input_field" id="phone" maxlength="50" />
+                              <label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
+
+                                <br />
+                              <input type="submit" class="submit_btn" name="submit" id="submit" value="Send" />
+                              <input type="reset" class="submit_btn" name="reset" id="reset" value="Reset" />
+                            
+                          </form>
+            
+                        </div>
+                    
+					</div>                    
+                    
+                    <div class="cleaner"></div>
+                
+{% endblock %}
+                

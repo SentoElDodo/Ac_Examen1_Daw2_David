@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+        <div id="templatemo_main_wrapper">
+            <div id="templatemo_main">
+            
+                <div id="content">
+                
+                	<div class="content_box last">
+                        
+                        
+                        <div class="cleaner_h40"></div>
+                        
+                        <div id="contact_form">
+                
+                            <h3>Contact Form</h3>
+                            
+                            <form method="post" name="contact" action="#">
+        
+                          <label for="author">Name:</label> <input name="author" type="text" class="required input_field" id="author" maxlength="50" />
+                                <label for="contra">Contraseña:</label> 
+                                <input name="contra" type="text" class="validate-email required input_field" id="email" maxlength="50" />
+                                
+                                
+
+                                <br />
+                              <input type="submit" class="submit_btn" name="submit" id="submit" value="Inicia" />
+                              
+                            
+                          </form>
+            
+                        </div>
+                    
+					</div>                    
+                    
+                    <div class="cleaner"></div>
+                </div> <!-- end of content -->
+                
+               
+{% endblock %}
